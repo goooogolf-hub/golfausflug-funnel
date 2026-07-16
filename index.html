@@ -275,9 +275,9 @@ input.invalid{border-color:var(--red); box-shadow:0 0 0 3px rgba(171,32,57,.12)}
 
 /* ---- Photo strip (Golf / Safari / Wein) ---- */
 .photo-strip{padding:8px 0 52px}
-.strip-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
-.strip-card{position:relative; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-soft); border:1px solid #E7EEDA}
-.strip-card img{aspect-ratio:4/3; object-fit:cover; width:100%; height:100%; transition:transform .5s ease}
+.strip-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:start}
+.strip-card{position:relative; aspect-ratio:4/3; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-soft); border:1px solid #E7EEDA}
+.strip-card img{display:block; object-fit:cover; width:100%; height:100%; transition:transform .5s ease}
 .strip-card:hover img{transform:scale(1.05)}
 .strip-card .cap{
   position:absolute; left:0; right:0; bottom:0; padding:26px 18px 14px 18px;
