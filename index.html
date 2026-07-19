@@ -483,32 +483,8 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
       <div class="wizard-body">
 
         <!-- STEP 1 : capture -->
-        <div class="step active" data-step="1" data-type="form">
-          <h2>Wohin dürfen wir Ihre persönliche Reise-Empfehlung senden?</h2>
-          <p class="hint">Ihr Plan kommt in wenigen Minuten bequem per E-Mail.</p>
-          <div class="field">
-            <label for="f_vorname">Vorname</label>
-            <input type="text" id="f_vorname" autocomplete="given-name" placeholder="Ihr Vorname">
-            <div class="err" id="err_vorname">Bitte geben Sie Ihren Vornamen ein.</div>
-          </div>
-          <div class="field">
-            <label for="f_nachname">Nachname <span class="opt">(optional)</span></label>
-            <input type="text" id="f_nachname" autocomplete="family-name" placeholder="Ihr Nachname">
-          </div>
-          <div class="field">
-            <label for="f_email">E-Mail</label>
-            <input type="email" id="f_email" autocomplete="email" placeholder="name@beispiel.de" inputmode="email">
-            <div class="err" id="err_email">Bitte geben Sie eine gültige E-Mail-Adresse ein.</div>
-            <p class="privacy-note">Mit dem Absenden stimmen Sie zu, dass wir Ihnen Ihre Reise-Empfehlung und passende Reise-Angebote per E-Mail senden. Abmeldung jederzeit möglich. Mehr dazu in unserer <a href="https://www.golfausflug.de/datenschutz/" target="_blank" rel="noopener">Datenschutzerklärung</a>.</p>
-          </div>
-          <div class="wizard-actions">
-            <button type="button" class="btn btn-primary" data-next>Weiter</button>
-          </div>
-          <p class="microcopy"><span class="lock">&#128274;</span> 100 % kostenlos &amp; unverbindlich. Keine Werbeflut, versprochen.</p>
-        </div>
-
         <!-- STEP 2 : Reisezeitraum -->
-        <div class="step" data-step="2" data-type="single" data-key="reisezeitraum">
+        <div class="step active" data-step="1" data-type="single" data-key="reisezeitraum">
           <h2>Wann möchten Sie reisen?</h2>
           <p class="hint">Beste Reisezeit für Südafrika: Oktober bis April.</p>
           <div class="chips" data-single>
@@ -530,22 +506,8 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
           </div>
         </div>
 
-        <!-- STEP 3 : Reisedauer -->
-        <div class="step" data-step="3" data-type="single" data-key="reisedauer">
-          <h2>Wie viele Tage haben Sie Zeit?</h2>
-          <div class="chips" data-single>
-            <button type="button" class="chip" data-val="7 bis 10 Tage">7 bis 10 Tage</button>
-            <button type="button" class="chip" data-val="11 bis 14 Tage">11 bis 14 Tage</button>
-            <button type="button" class="chip" data-val="15+ Tage">15+ Tage</button>
-            <button type="button" class="chip" data-val="Noch offen">Noch offen</button>
-          </div>
-          <div class="wizard-actions">
-            <button type="button" class="btn btn-primary" data-next disabled>Weiter</button>
-          </div>
-        </div>
-
         <!-- STEP 4 : Abflughafen -->
-        <div class="step" data-step="4" data-type="single" data-key="abflughafen">
+        <div class="step" data-step="2" data-type="single" data-key="abflughafen">
           <h2>Von wo fliegen Sie ab?</h2>
           <div class="chips" data-single>
             <button type="button" class="chip" data-val="Frankfurt">Frankfurt</button>
@@ -564,7 +526,7 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
         </div>
 
         <!-- STEP 5 : Golf-Frequenz -->
-        <div class="step" data-step="5" data-type="single" data-key="golffrequenz">
+        <div class="step" data-step="3" data-type="single" data-key="golffrequenz">
           <h2>Wie oft möchten Sie Golf spielen?</h2>
           <div class="chips" data-single>
             <button type="button" class="chip" data-val="So oft wie möglich">So oft wie möglich &#9971;</button>
@@ -578,7 +540,7 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
         </div>
 
         <!-- STEP 6 : Interessen (multi) -->
-        <div class="step" data-step="6" data-type="multi" data-key="interessen">
+        <div class="step" data-step="4" data-type="multi" data-key="interessen">
           <h2>Was darf auf Ihrer Reise nicht fehlen?</h2>
           <p class="hint">Mehrfachauswahl möglich.</p>
           <div class="chips" data-multi>
@@ -596,7 +558,7 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
         </div>
 
         <!-- STEP 7 : Reisebegleitung -->
-        <div class="step" data-step="7" data-type="single" data-key="reisebegleitung">
+        <div class="step" data-step="5" data-type="single" data-key="reisebegleitung">
           <h2>Wer reist mit?</h2>
           <div class="chips" data-single>
             <button type="button" class="chip" data-val="Ich reise allein">Ich reise allein</button>
@@ -610,7 +572,7 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
         </div>
 
         <!-- STEP 8 : optional -->
-        <div class="step" data-step="8" data-type="optional">
+        <div class="step" data-step="6" data-type="optional">
           <h2>Fast geschafft: noch zwei optionale Angaben</h2>
           <p class="hint">Damit wird Ihr Plan noch genauer. Sie können diesen Schritt auch überspringen.</p>
           <div class="field">
@@ -631,11 +593,37 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
             <input type="text" id="f_notes" placeholder="z. B. bestimmter Golfplatz, Anlass, Wunschhotel">
           </div>
           <div class="wizard-actions">
-            <button type="button" class="btn btn-primary" data-submit>Empfehlung anfordern &rarr;</button>
+            <button type="button" class="btn btn-primary" data-next>Weiter</button>
             <button type="button" class="skip-btn" data-skip>Überspringen</button>
           </div>
         </div>
 
+        <!-- STEP: Kontakt (zum Schluss) -->
+        <div class="step" data-step="7" data-type="form">
+          <h2>Wohin dürfen wir Ihre persönliche Reise-Empfehlung senden?</h2>
+          <p class="hint">Ihr Plan kommt in wenigen Minuten bequem per E-Mail.</p>
+          <div class="field">
+            <label for="f_vorname">Vorname</label>
+            <input type="text" id="f_vorname" autocomplete="given-name" placeholder="Ihr Vorname">
+            <div class="err" id="err_vorname">Bitte geben Sie Ihren Vornamen ein.</div>
+          </div>
+          <div class="field">
+            <label for="f_nachname">Nachname <span class="opt">(optional)</span></label>
+            <input type="text" id="f_nachname" autocomplete="family-name" placeholder="Ihr Nachname">
+          </div>
+          <div class="field">
+            <label for="f_email">E-Mail</label>
+            <input type="email" id="f_email" autocomplete="email" placeholder="name@beispiel.de" inputmode="email">
+            <div class="err" id="err_email">Bitte geben Sie eine gültige E-Mail-Adresse ein.</div>
+            <p class="privacy-note">Mit dem Absenden stimmen Sie zu, dass wir Ihnen Ihre Reise-Empfehlung und passende Reise-Angebote per E-Mail senden. Abmeldung jederzeit möglich. Mehr dazu in unserer <a href="https://www.golfausflug.de/datenschutz/" target="_blank" rel="noopener">Datenschutzerklärung</a>.</p>
+          </div>
+          <div class="wizard-actions">
+            <button type="button" class="btn btn-primary" data-submit>Empfehlung anfordern &rarr;</button>
+          </div>
+          <p class="microcopy"><span class="lock">&#128274;</span> 100 % kostenlos &amp; unverbindlich. Keine Werbeflut, versprochen.</p>
+        </div>
+
+        
         <!-- SUCCESS -->
         <div id="screen-success">
           <div class="check" aria-hidden="true">
@@ -856,7 +844,6 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
       data.vorname = vn.value.trim();
       data.nachname = document.getElementById('f_nachname').value.trim();
       data.email = em.value.trim();
-      sendPartial();
     }
     return ok;
   }
@@ -914,7 +901,7 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
         yToggle.querySelectorAll('[data-year]').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
         b.setAttribute('aria-pressed','true');
         year = b.getAttribute('data-year');
-        refreshStep(document.querySelector('[data-step="2"]'));
+        refreshStep(document.querySelector('[data-step="1"]'));
       });
     });
   }
@@ -937,7 +924,7 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
     return base;
   }
   // capture month separately for step 2
-  var step2 = document.querySelector('[data-step="2"]');
+  var step2 = document.querySelector('[data-step="1"]');
   step2.querySelectorAll('[data-single] .chip').forEach(function(chip){
     chip.addEventListener('click', function(){
       data.reisezeitraum_month = decode(chip.getAttribute('data-val'));
@@ -960,10 +947,15 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
   });
   backBtn.addEventListener('click', function(){ if(idx>0) show(idx-1); });
 
-  document.querySelector('[data-skip]').addEventListener('click', function(){ submitAll(); });
+  document.querySelector('[data-skip]').addEventListener('click', function(){
+    data.spielstaerke = document.getElementById('f_hcp').value.trim();
+    data.anmerkungen = document.getElementById('f_notes').value.trim();
+    next();
+  });
   document.querySelector('[data-submit]').addEventListener('click', function(){
     data.spielstaerke = document.getElementById('f_hcp').value.trim();
     data.anmerkungen = document.getElementById('f_notes').value.trim();
+    if(!validateStep1()) return;
     submitAll();
   });
 
@@ -974,11 +966,16 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
     if(!stepEl) return;
     e.preventDefault();
     var type = stepEl.getAttribute('data-type');
-    if(type==='form'){ if(validateStep1()) next(); return; }
+    if(type==='form'){
+      data.spielstaerke = document.getElementById('f_hcp').value.trim();
+      data.anmerkungen = document.getElementById('f_notes').value.trim();
+      if(validateStep1()) submitAll();
+      return;
+    }
     if(type==='optional'){
       data.spielstaerke = document.getElementById('f_hcp').value.trim();
       data.anmerkungen = document.getElementById('f_notes').value.trim();
-      submitAll(); return;
+      next(); return;
     }
     if(stepAnswered(stepEl)) next();
   });
@@ -1038,7 +1035,7 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
 
   // hero CTA -> focus first field
   document.getElementById('hero-cta').addEventListener('click', function(){
-    setTimeout(function(){ var f=document.getElementById('f_vorname'); if(f) f.focus(); }, 500);
+    /* Fokus entfaellt: Kontakt kommt zum Schluss */
   });
 
   // sticky mobile CTA: show after hero scrolls away, hide while the wizard is in view
