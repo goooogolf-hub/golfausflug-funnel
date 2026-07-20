@@ -821,7 +821,11 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
   function goSuccess(){
     steps.forEach(function(st){ st.classList.remove('active'); });
     successScreen.classList.add('active');
-    if(window.fbq){ fbq('track', 'Lead'); }
+    if(window.fbq){
+      var _em = ((data && data.email) || (document.getElementById('f_email')||{}).value || '').toLowerCase();
+      var _isTest = _em.indexOf('+') !== -1 || _em.indexOf('goooogolf') !== -1 || /@(dfsf\.de|example\.|test\.)/.test(_em);
+      if(_em && !_isTest){ fbq('track', 'Lead'); }
+    }
     fill.style.width = "100%";
     label.textContent = "Fertig";
     backBtn.hidden = true;
