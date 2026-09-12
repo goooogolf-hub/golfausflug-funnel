@@ -15,19 +15,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/elefant-hero.jpg" fetchpriority="high">
 
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel - laedt erst nach ausdruecklicher Einwilligung (12.09.2026) -->
 <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1506872426272904');
-fbq('track', 'PageView');
+(function(){
+  var KEY='ga_consent_v1';
+  window.gaLoadPixel = function(){
+    if(window.fbq) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1506872426272904');
+    fbq('track', 'PageView');
+  };
+  try{ if(localStorage.getItem(KEY)==='yes') window.gaLoadPixel(); }catch(e){}
+})();
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1506872426272904&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel Code -->
+<!-- End Meta Pixel -->
 
 <style>
 :root{
@@ -1064,5 +1069,43 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
   })();
 
   show(0);
+})();
+</script>
+
+<!-- Einwilligung Statistik/Werbung (12.09.2026) -->
+<style>
+#ga-consent{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#fff;border-top:3px solid #99CA3C;box-shadow:0 -2px 14px rgba(0,0,0,.18);padding:16px 18px;font-family:inherit;font-size:15px;line-height:1.5;color:#234087}
+#ga-consent .ga-in{max-width:920px;margin:0 auto;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+#ga-consent p{margin:0;flex:1 1 380px}
+#ga-consent .ga-btns{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+#ga-consent button{font:inherit;cursor:pointer;border-radius:6px;padding:11px 18px;border:2px solid #234087;min-height:44px}
+#ga-consent .ga-yes{background:#99CA3C;border-color:#99CA3C;color:#234087;font-weight:700}
+#ga-consent .ga-no{background:#fff;color:#234087}
+#ga-consent a{color:#234087}
+@media(max-width:600px){#ga-consent .ga-btns button{flex:1 1 100%}}
+</style>
+<div id="ga-consent" hidden>
+  <div class="ga-in">
+    <p>Wir messen mit einem Dienst von Meta (Facebook), wie gut unsere Anzeigen funktionieren. Dabei werden Daten an Meta uebertragen. Fuer den Reise-Finder selbst ist das nicht noetig - Sie koennen ihn ohne Zustimmung vollstaendig nutzen. <a href="https://www.golfausflug.de/datenschutz/" target="_blank" rel="noopener">Datenschutz</a></p>
+    <div class="ga-btns">
+      <button type="button" class="ga-no" id="ga-consent-no">Nur Notwendiges</button>
+      <button type="button" class="ga-yes" id="ga-consent-yes">Einverstanden</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='ga_consent_v1';
+  var box=document.getElementById('ga-consent');
+  if(!box) return;
+  var val=null; try{ val=localStorage.getItem(KEY); }catch(e){}
+  if(val!=='yes' && val!=='no'){ box.hidden=false; }
+  function setC(v){
+    try{ localStorage.setItem(KEY,v); }catch(e){}
+    box.hidden=true;
+    if(v==='yes' && window.gaLoadPixel){ window.gaLoadPixel(); }
+  }
+  document.getElementById('ga-consent-yes').addEventListener('click',function(){ setC('yes'); });
+  document.getElementById('ga-consent-no').addEventListener('click',function(){ setC('no'); });
 })();
 </script>
