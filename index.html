@@ -10,9 +10,7 @@
 <meta property="og:site_name" content="goHartl golftours">
 <meta property="og:image" content="assets/elefant-hero.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9B%B3%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/open-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/elefant-hero.jpg" fetchpriority="high">
 
 <!-- Meta Pixel - laedt erst nach ausdruecklicher Einwilligung (12.09.2026) -->
@@ -421,6 +419,71 @@ h1,h2,h3{letter-spacing:-.012em; text-wrap:balance}
   padding:16px 22px; font-size:14.5px; font-weight:600}
 .bottombar a{color:#fff; text-decoration:none}
 .bottombar a:hover{text-decoration:underline}
+
+/* ==== Neuer Look wie golfausflug.de (Relaunch, 28.09.2026) ==== */
+@font-face{font-family:"Open Sans GA";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/open-sans-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Open Sans GA";font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/open-sans-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Open Sans GA";font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/open-sans-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Open Sans GA";font-style:normal;font-weight:800;font-display:swap;src:url(assets/fonts/open-sans-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Merriweather GA";font-style:normal;font-weight:300;font-display:swap;src:url(assets/fonts/merriweather-latin-300-normal.woff2) format("woff2")}
+@font-face{font-family:"Merriweather GA";font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/merriweather-latin-700-normal.woff2) format("woff2")}
+:root{
+  --golf-green:#99CA3C; --golf-green-light:#aad65a; --golf-moss:#4f7a14; --golf-dark:#1c2620;
+  --sage:#cfdcb2; --green-pale:#eef5e0;
+  --safari-gold:#99CA3C; --gold-amber:#99CA3C; --gold-dark:#234087;
+  --teal:#234087; --teal-deep:#101d3a; --teal-mid:#234087; --navy:#101d3a; --night:#101d3a;
+  --cream:#f7f5ef; --ink:#1c2620; --ink-soft:#44514a; --muted:#6b7068; --line:#e3ded2; --panel:#ffffff;
+  --head:"Merriweather GA", Georgia, "Times New Roman", serif;
+  --body:"Open Sans GA", "Segoe UI", Arial, sans-serif;
+  --shadow:0 10px 30px rgba(16,29,58,.10); --shadow-soft:0 4px 16px rgba(16,29,58,.08);
+}
+body{background:var(--cream); color:var(--ink-soft)}
+a{color:var(--teal)}
+h1,h2,h3,h4{color:var(--teal)}
+.hero h1{font-family:var(--body); font-weight:800; letter-spacing:-.015em; color:var(--teal)}
+.hero h1 em{color:var(--teal); background:linear-gradient(to top, rgba(153,202,60,.5) 0 .16em, transparent .16em)}
+.eyebrow{color:#6b7a44; background:transparent; border:none; padding:0; letter-spacing:.16em; font-size:12.5px}
+.topbar{background:var(--night); color:#fff}
+.topbar .wrap{padding:9px 22px; font-size:14px; font-weight:600}
+.topbar a{color:#fff}
+.site-header{background:#fff; backdrop-filter:none}
+.site-header::after{display:none}
+.header-link{color:var(--teal)}
+.header-link:hover{color:var(--teal)}
+.btn-primary{background:var(--golf-green); color:#14300a; box-shadow:0 4px 12px rgba(16,29,58,.14)}
+.btn-primary:hover{background:#8bbb30; color:#14300a}
+.btn-ghost{color:var(--teal); border-color:var(--line)}
+.btn:focus-visible{outline:3px solid rgba(35,64,135,.45)}
+.hero-media::before{background:radial-gradient(60% 60% at 55% 45%, rgba(35,64,135,.14), transparent 72%)}
+.hero-media .badge{border-color:var(--line)}
+.wizard{border-color:var(--line); box-shadow:0 18px 44px rgba(16,29,58,.12)}
+.wizard::before{background:var(--golf-green)}
+.progress-label{color:var(--teal)}
+.chip{border-color:var(--sage)}
+.chip[aria-pressed=true]{background:var(--golf-green); border-color:#7fae2c; color:#14300a}
+.section-head .rule{width:52px; height:3px; background:var(--golf-green)}
+.b-card,.trip-card{border-color:var(--line)}
+.b-card:hover,.trip-card:hover{border-color:var(--golf-green)}
+.b-card--hl{border-color:var(--golf-green); background:#f3f8e8}
+.group-strip{background:#fff}
+.group-strip .section-head p{color:var(--ink-soft)}
+.trip-card .price{color:var(--teal)}
+.advantages b{color:var(--teal)}
+.strip-card{border-color:var(--line)}
+.strip-card .cap{background:linear-gradient(to top, rgba(16,29,58,.85), rgba(16,29,58,0))}
+.testimonial{border-color:var(--line)}
+.testimonial .stars{color:var(--golf-green)}
+.testimonial blockquote{color:var(--teal)}
+.info-inline,.privacy-note a{color:var(--teal)}
+.sticky-cta{background:rgba(247,245,239,.97)}
+.contact-band{background:var(--teal)}
+.site-footer{background:var(--night); color:#c9d3e6}
+.site-footer::before{display:none}
+.site-footer p{color:#c9d3e6}
+.footer-links a{color:#e6ebf5}
+.footer-fine{color:#9fb0cf}
+.bottombar{background:#0b1429; color:#c9d3e6}
+@media (max-width:640px){.topbar .sep{display:none}.topbar .wrap{font-size:13px;gap:4px 14px}}
 </style>
 
 <div class="topbar"><div class="wrap">
